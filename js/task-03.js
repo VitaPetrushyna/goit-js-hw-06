@@ -13,23 +13,47 @@ const images = [
   },
 ];
 
+// const imagesEl = images.map((image) => {
+//   const itemImgEl = document.createElement("li");
+
+//   const linkImgEl = document.createElement("img");
+
+//   linkImgEl.classList.add("gallery-list");
+//   linkImgEl.setAttribute("src", `${image.url}`);
+//   linkImgEl.setAttribute("alt", `${image.alt}`);
+//   linkImgEl.width = 640;
+
+//   itemImgEl.appendChild(linkImgEl);
+
+//   const listImgEl = document.querySelector("ul.gallery");
+//   listImgEl.appendChild(itemImgEl);
+//   console.log(listImgEl);
+// });
+
+// const listImgEl = document.querySelector("ul.gallery");
+// const itemImgEl = ({ url, alt }) => {
+//   return `<li><img class="gallery-list" src = ${url} alt = ${alt} width = 640 heigth = 640></li>`;
+// };
+// const makeGalleryImg = images.map(itemImgEl).join("");
+// console.log(makeGalleryImg);
+// listImgEl.insertAdjacentHTML("afterbegin", makeGalleryImg);
+// listImgEl.setAttribute(
+//   "style",
+//   "list-style-type: none; display: flex; justify-content: space-between;  align-items: stretch;"
+// );
+
 const listImgEl = document.querySelector("ul.gallery");
-console.log(listImgEl);
 
-const imagesEl = images.map((image) => {
-  const itemImgEl = document.createElement("li");
+const makeGalleryImg = images
+  .map(({ url, alt }) => {
+    return `<li><img class="gallery-list" src = ${url} alt = ${alt} width = 640 heigth = 640></li>`;
+  })
+  .join("");
 
-  const linkImgEl = document.createElement("img");
+listImgEl.insertAdjacentHTML("afterbegin", makeGalleryImg);
 
-  linkImgEl.classList.add("gallery-list");
-  linkImgEl.setAttribute("src", `${image.url}`);
-  linkImgEl.setAttribute("alt", `${image.alt}`);
-
-  itemImgEl.appendChild(linkImgEl);
-
-  console.log(itemImgEl);
-});
-
-// const totalScore = students.reduce((total, student) => {
-//   return total + student.score;
-// }, 0);
+listImgEl.setAttribute(
+  "style",
+  "list-style-type: none; display: flex; justify-content: space-between;  align-items: stretch;"
+);
+console.log(makeGalleryImg);
