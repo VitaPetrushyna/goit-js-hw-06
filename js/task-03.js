@@ -44,16 +44,16 @@ const images = [
 
 const listImgEl = document.querySelector("ul.gallery");
 
-const makeGalleryImg = images
+const makeGalleryImgMarkup = images
   .map(({ url, alt }) => {
     return `<li><img class="gallery-list" src = ${url} alt = ${alt} width = 640 heigth = 640></li>`;
   })
   .join("");
 
-listImgEl.insertAdjacentHTML("afterbegin", makeGalleryImg);
+listImgEl.insertAdjacentHTML("afterbegin", makeGalleryImgMarkup);
 
 listImgEl.setAttribute(
   "style",
   "list-style-type: none; display: flex; justify-content: space-between;  align-items: stretch;"
 );
-console.log(makeGalleryImg);
+console.log(makeGalleryImgMarkup);
