@@ -4,7 +4,7 @@ console.log(inputSymbolEl);
 inputSymbolEl.addEventListener("blur", onChangesColorBorder);
 
 function onChangesColorBorder(event) {
-  event.preventDefault();
+  //   event.preventDefault();
   if (
     event.currentTarget.value.length === Number(inputSymbolEl.dataset.length)
   ) {
