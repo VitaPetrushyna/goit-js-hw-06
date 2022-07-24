@@ -12,7 +12,11 @@ refs.inputEl.addEventListener("input", onInputChange);
 
 function onInputChange(event) {
   console.log(event.currentTarget.value);
-  refs.outputEl.textContent = event.currentTarget.value || "Anonymous";
+  //   refs.outputEl.textContent = event.currentTarget.value || "Anonymous";
+
+  event.currentTarget.value === ""
+    ? (refs.outputEl.textContent = "Anonymous")
+    : (refs.outputEl.textContent = event.currentTarget.value);
 }
 
 // refs.inputEl.addEventListener("focus", (event) => {
